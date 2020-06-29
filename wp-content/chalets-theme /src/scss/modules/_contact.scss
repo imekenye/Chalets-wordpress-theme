@@ -1,0 +1,87 @@
+// CONTACT FORM SECTION
+
+.enquiry__form {
+  width: 100%;
+  height: 80%;
+  background: $color-primary;
+  padding: 4rem 0;
+  &-heading {
+    position: relative;
+    h3 {
+      display: block;
+      text-align: center;
+      font-family: 'Spectral', serif;
+      font-size: 34px;
+      color: white;
+      padding: 4rem 0;
+    }
+  }
+  form {
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 68px 68px 1fr 72px;
+    @include media('<=phone') {
+      grid-template-columns: 1fr;
+      grid-template-rows: 68px 68px 68px 1fr 72px;
+    }
+    @include inputColor($color-secondary, white);
+    .form__input {
+      &-email {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        @include media('<=phone') {
+          grid-column: 1/2;
+          grid-row: 2/3;
+        }
+      }
+      &-subject {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        @include media('<=phone') {
+          grid-column: 1/2;
+          grid-row: 3/4;
+        }
+      }
+      &-text {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        @include media('<=phone') {
+          grid-column: 1/2;
+        }
+      }
+      &-textarea {
+        grid-column: 1/3;
+        grid-row: 3/4;
+        @include media('<=phone') {
+          grid-column: 1/2;
+          grid-row: 4/5;
+        }
+      }
+    }
+    @include textAreaColor($color-secondary, white);
+    button {
+      grid-column: 1/3;
+      grid-row: 4/5;
+      width: 80%;
+      margin: 0 auto;
+      width: 160px;
+      height: 48px;
+      border: none;
+      background-color: $color-secondary;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background-color: darken($color: $color-secondary, $amount: 10);
+      }
+      @include media('<=phone') {
+        grid-column: 1/2;
+        grid-row: 5/6;
+        width: 200px;
+      }
+    }
+  }
+}

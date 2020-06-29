@@ -1,0 +1,67 @@
+// HEADER
+.nav {
+  height: 86px;
+  background-color: #1f0730e1;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  @include media('<=phone') {
+    height: 43px;
+  }
+  .logo {
+    @include media('<=phone') {
+      height: 25px;
+    }
+  }
+  svg {
+    cursor: pointer;
+    &:hover {
+      fill: $color-secondary;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    list-style-type: none;
+    @include media('<=phone') {
+      display: none;
+    }
+    &Item {
+      &:not(:first-child) {
+        margin-left: 50px;
+      }
+      &Link {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: 'Spectral', serif;
+        position: relative;
+
+        &::after {
+          content: '';
+          height: 10px;
+          width: 0%;
+          background: $color-secondary;
+          position: absolute;
+          bottom: 2px;
+          left: 0;
+          // z-index: -1;
+          transform-origin: center;
+          transition: all 0.3s ease-out;
+        }
+        &:hover {
+          &::after {
+            content: '';
+            width: 100%;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+}

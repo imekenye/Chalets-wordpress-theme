@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Homepage</title>
+  </head>
+  <body>
+    <header>
+      <!-- NAV SECTION -->
+
+      <nav class="nav">
+        <div class="containerWrapper">
+          <img src="./images/svg/logo.svg" alt="logo" class="logo" />
+          <ul class="nav__list">
+            <li class="nav__listItem">
+              <a href="/index.html" class="nav__listItemLink">Home</a>
+            </li>
+            <li class="nav__listItem">
+              <a href="/forsale.html" class="nav__listItemLink">For Sale</a>
+            </li>
+            <li class="nav__listItem">
+              <a href="/forrent.html" class="nav__listItemLink">For Rent</a>
+            </li>
+            <li class="nav__listItem">
+              <a href="/contact.html" class="nav__listItemLink">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- END OF NAV SECTION -->
+
+      <!-- HERO SECTION -->
+
+      <div class="hero">
+        <div class="hero__left">
+          <h1 class="hero__left-heading">Chalet Frost</h1>
+          <div class="hero__left-location">
+            <img src="/images/svg/hero-location.svg" alt="location" />
+            <p>651 Pfister Dr, Aspen, Co 81611</p>
+          </div>
+          <p class="hero__left-specs">
+            8 bd | 11 ba | 13,690 sqft
+          </p>
+          <button class="hero__left-button">
+            <a href="/" class="hero__left-button-link">View Chalet</a>
+          </button>
+        </div>
+        <div class="hero__right">
+          <div class="hero__right-image">
+            <!-- <img src="/images/hero-image.png" alt="" /> -->
+          </div>
+        </div>
+      </div>
+      <div class="gallery wrapper">
+        <div class="gallery__image-one">
+          <img class="g-img" src="/images/gallery-image-1.png" alt="" />
+        </div>
+        <div class="gallery__image-two">
+          <img class="g-img" src="/images/gallery-image-2.png" alt="" />
+        </div>
+        <div class="gallery__image-three">
+          <img class="g-img" src="/images/gallery-image-3.png" alt="" />
+        </div>
+        <div class="gallery__image-four">
+          <img class="g-img" src="/images/gallery-image-4.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <!-- END OF HERO SECTION -->
+
+    <!-- FORM SECTION -->
+
+    <section class="search-form">
+      <div class="search-form__left-top"></div>
+      <div class="search-form__left-bottom">
+        <span>Find Your Ideal Home Today</span>
+        <div class="rect"></div>
+      </div>
+      <div class="search-form__right">
+        <form action="" class="form">
+          <div class="form-nav">
+            <div class="form-nav__forsale">
+              <a href="/">For Sale</a>
+            </div>
+            <div class="form-nav__forrent">
+              <a href="/">For Rent</a>
+            </div>
+          </div>
+          <div class="form-select">
+            <div class="form-select__beds custom-select">
+              <select name="Beds" id="Beds" class="select-bed">
+                <option value="0">Beds</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+            <div class="form-select__baths custom-select">
+              <select name="Baths" id="Baths" class="select-baths">
+                <option value="0">Baths</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-range">
+            <div class="custom-rangeslider">
+              <label for="price">Price Range(USD)</label>
+              <input
+                class="custom-rangeInput"
+                title="Percentage"
+                id="range-slider1"
+                type="range"
+                min="0"
+                max="500000"
+                value="50000"
+                step="1"
+                data-tooltip="true"
+                aria-controls="rangeTooltip rangeLabel"
+                aria-live="polite"
+              />
+              <span class="custom-rangeslider__tooltip">0</span>
+              <span class="custom-rangeslider__label">
+                <span class="custom-rangeslider__label-min">0</span>
+                <span class="custom-rangeslider__label-max">500,000</span>
+              </span>
+            </div>
+          </div>
+          <button class="form-btn">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- END OF FORM SECTION -->
+
+    <!-- FEATURED CHALETS SECTION -->
+
+    <section class="featured">
+      <div class="featured__heading">
+        <h1>Featured chalets</h1>
+        <div class="featured__heading-rect"></div>
+      </div>
+
+      <div class="featured__chalets">
+        <div class="featured__chaletsLeft">
+          <div class="featured__chaletsLeft-image"></div>
+          <div class="featured__chaletsLeft-body">
+            <span class="price">$22,800,000</span>
+            <h3>Chalet Frost</h3>
+            <p>651 Pfister Dr, Aspen, Co 81611</p>
+            <span>8 bd | 11 ba | 13,390 sqft</span>
+          </div>
+        </div>
+        <div class="featured__chaletsRight">
+          <div class="listing__card">
+            <div class="listing__card-image">
+              <div class="img-overlay"></div>
+              <div class="f-img-1"></div>
+            </div>
+            <div class="listing__card-price">
+              <span>$22,800,000</span>
+              <div class="tag">For Sale</div>
+            </div>
+            <div class="listing__card-body">
+              <h3>Chalet Dalmat</h3>
+              <p>651 Pfister Dr, Aspen, Co 81611</p>
+              <span>8 bd | 11 ba | 13,390 sqft</span>
+            </div>
+          </div>
+
+          <div class="listing__card">
+            <div class="listing__card-image">
+              <div class="img-overlay"></div>
+              <div class="f-img-2"></div>
+            </div>
+            <div class="listing__card-price">
+              <span>$22,800,000</span>
+              <div class="tag">For Sale</div>
+            </div>
+            <div class="listing__card-body">
+              <h3>Chalet Dalmat</h3>
+              <p>651 Pfister Dr, Aspen, Co 81611</p>
+              <span>8 bd | 11 ba | 13,390 sqft</span>
+            </div>
+          </div>
+
+          <div class="listing__card">
+            <div class="listing__card-image">
+              <div class="img-overlay"></div>
+              <div class="f-img-3"></div>
+            </div>
+            <div class="listing__card-price">
+              <span>$22,800,000</span>
+              <div class="tag">For Sale</div>
+            </div>
+            <div class="listing__card-body">
+              <h3>Chalet Dalmat</h3>
+              <p>651 Pfister Dr, Aspen, Co 81611</p>
+              <span>8 bd | 11 ba | 13,390 sqft</span>
+            </div>
+          </div>
+
+          <div class="listing__card">
+            <div class="listing__card-image">
+              <div class="img-overlay"></div>
+              <div class="f-img-4"></div>
+            </div>
+            <div class="listing__card-price">
+              <span>$22,800,000</span>
+              <div class="tag">For Sale</div>
+            </div>
+            <div class="listing__card-body">
+              <h3>Chalet Dalmat</h3>
+              <p>651 Pfister Dr, Aspen, Co 81611</p>
+              <span>8 bd | 11 ba | 13,390 sqft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- END OF FEATURED CHALETS SECTION -->
+
+    <!-- CONTACT FORM SECTION -->
+
+    <section class="enquiry__form">
+      <div class="enquiry__form-heading">
+        <h3>Enquire</h3>
+      </div>
+      <form action="">
+        <input type="text" placeholder="Your Name" class="form__input-text" />
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="form__input-email"
+        />
+        <input type="text" placeholder="Subject" class="form__input-subject" />
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="How can we help you?"
+          class="form__input-textarea"
+        ></textarea>
+        <button class="form__input-btn">Submit</button>
+      </form>
+    </section>
+
+    <!-- END OF CONTACT FORM SECTION -->
+
+    <!-- FOOTER SECTION -->
+
+    <footer>
+      <div class="footerWrapper">
+        <div class="footer__left">
+          <div class="footer__left-logo">
+            <img src="/images/svg/logo.svg" alt="" />
+          </div>
+          <div class="footer__left-location"><p>Aspen, Colorado</p></div>
+        </div>
+        <div class="footer__right">
+          <p>&copy; 2019 Chalets and Caviar.Made with ❤️</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- END OF FOOTER SECTION -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+// Colors
+
+$color-primary: #1f0730;
+$color-primary2: #24272e;
+$color-secondary: #edcb9b;
+$color-grey-dark: #5c5f6d;
+$color-grey-light: #f0f2f3;
+
+// Fonts
+
+$font-2: 'Niramit', sans-serif;
+$font-1: 'Spectral', serif;
+
+// Range Slider
+$range-height: 50px;
+$range-background-color: transparent; // Test
+
+// Thumb
+$thumb-background-color: #21324f; // Test
+$thumb-border: 2px solid #ffffff;
+$thumb-height: 20px;
+$thumb-width: 20px;
+$thumb-border-radius: 50%; // Circle
+
+// Track
+$track-height: 5px;
+$track-background-color: $color-secondary;
+
+// Tool Tip
+$tool-tip-border: 1px $color-secondary solid;
+$tool-tip-border-arrow: $tool-tip-border;

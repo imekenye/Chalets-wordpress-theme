@@ -1,0 +1,136 @@
+// FLEXBOX MIXINS
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+  -moz-align-content: $align;
+  -ms-align-content: $align;
+  align-content: $align;
+}
+
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+  -moz-align-self: $align;
+  -ms-align-self: $align;
+  align-self: $align;
+}
+
+@mixin center($items) {
+  justify-content: $items;
+  align-items: center;
+}
+
+// ----- Range Mixins -----
+
+// Cursor
+@mixin cursorGrab {
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  &:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+  }
+}
+
+// Range Track
+@mixin rangeTrack {
+  appearance: none; // Reset Appearance
+  box-sizing: border-box; // Border need to be inset
+  height: $track-height;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: grey;
+}
+
+@mixin rangeTrackFocus {
+  // background: yellow; // Test
+}
+
+// Range Thumb
+@mixin rangeThumb {
+  appearance: none; // Reset Appearance
+  box-sizing: border-box; // Border need to be inset
+  background-color: $color-secondary;
+  width: $thumb-width;
+  height: $thumb-height;
+  border: none;
+  border-radius: $thumb-border-radius;
+  background: #f0f2f3;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  @include cursorGrab; // Optional
+}
+
+@mixin unSelectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@mixin avoidClicks {
+  pointer-events: none;
+}
+
+@mixin inputColor($borderColor, $placeholderColor) {
+  input {
+    background: transparent;
+    border: 1px solid $borderColor;
+    padding-left: 20px;
+    font-size: 16px;
+    &::placeholder {
+      color: $placeholderColor;
+      font-size: 16px;
+    }
+    &:focus {
+      background-color: $color-secondary;
+    }
+  }
+}
+
+@mixin textAreaColor($bColor, $pColor) {
+  textarea {
+    background: transparent;
+    border: 1px solid $bColor;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 20px;
+
+    &::placeholder {
+      color: $pColor;
+    }
+    &:focus {
+      background-color: $color-secondary;
+    }
+  }
+}

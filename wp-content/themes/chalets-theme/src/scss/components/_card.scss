@@ -1,0 +1,96 @@
+.listing {
+  &__card {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-primary;
+    &-image {
+      height: 184px;
+      position: relative;
+      overflow: hidden;
+      .img-overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+          180deg,
+          rgba(36, 39, 46, 0) 0%,
+          #24272e 100%
+        );
+      }
+      .f-img-1 img {
+        width: 100%;
+        height: inherit;
+        //background: url('/images/featured-image-1.png') no-repeat;
+        object-fit: cover;
+      }
+      .f-img-2 {
+        width: 100%;
+        height: inherit;
+        //background: url('/images/featured-image-2.png') no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .f-img-3 {
+        width: 100%;
+        height: inherit;
+        //background: url('/images/featured-image-3.png') no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .f-img-4 {
+        width: 100%;
+        height: inherit;
+        //background: url('/images/featured-image-4.png') no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+    &-body {
+      background: $color-primary;
+      height: 113px;
+      padding: 3rem;
+      h3 {
+        font-family: 'Spectral', serif;
+        font-size: 20px;
+        line-height: 1;
+        color: white;
+      }
+      p {
+        font-size: 1.2rem;
+        margin: 0;
+        overflow: hidden;
+        color: $color-secondary;
+      }
+      span {
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+    &-price {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      span {
+        font-size: 20px;
+        font-family: 'Spectral', serif;
+        color: white;
+        margin-left: 20px;
+      }
+      .tag {
+        width: 50%;
+        color: $color-secondary;
+        font-size: 14px;
+        text-align: center;
+        background-color: $color-grey-dark;
+        height: 30px;
+      }
+    }
+  }
+}

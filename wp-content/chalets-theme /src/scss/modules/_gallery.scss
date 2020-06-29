@@ -1,0 +1,53 @@
+// GALLERY
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 23rem;
+  grid-gap: 2%;
+  padding: 1% 0;
+  @include media('<=tablet') {
+    height: 15rem;
+    padding: 1.5%;
+  }
+  @include media('<=phone') {
+    height: 10rem;
+    padding: 1.5%;
+  }
+
+  &__image {
+    &-one {
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-two {
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-three {
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-four {
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

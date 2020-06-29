@@ -1,0 +1,46 @@
+@import 'abstract/mixins';
+@import 'abstract/variables';
+
+@import 'layout/wrapper';
+@import 'layout/breakpoints';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/listingCards';
+
+@import 'base/base';
+
+@import 'pages/contactPage';
+@import 'pages/forsalePage';
+@import 'pages/notfoundPage';
+@import 'pages/singlePage';
+
+@import 'modules/hero';
+@import 'modules/gallery';
+@import 'modules/homeForm';
+@import 'modules/featured';
+@import 'modules/headerImage';
+@import 'modules/contact';
+
+@import 'components/rangeSlider';
+@import 'components/card';
+
+//@import url('https://fonts.googleapis.com/css?family=Open + Sans:wght@700;300&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@200;300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Niramit:wght@300;400;700&display=swap');
+.search-form__left {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 24px;
+}
+.search__section {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+  // .search-form {
+  //   .search {
+  //     position: fixed;
+  //   }
+  // }
+}

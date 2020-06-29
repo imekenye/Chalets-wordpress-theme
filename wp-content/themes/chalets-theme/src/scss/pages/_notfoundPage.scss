@@ -1,0 +1,66 @@
+.wrapper__404 {
+  margin: 0 auto;
+  max-width: 90%;
+  height: 100vh;
+  .notfound {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    @include center(center);
+    width: 70%;
+    height: 50vh;
+    background: $color-primary;
+    margin: 10% auto;
+    @include media('<=784px') {
+      text-align: center;
+      flex-direction: column;
+    }
+    &__left {
+      @include media('<=784px') {
+        height: 150px;
+      }
+      h1 {
+        font-family: $font-1;
+        font-weight: 200;
+        font-size: 98px;
+        line-height: 194px;
+        color: white;
+        margin-right: 30px;
+        @include flexbox;
+      }
+    }
+    &__right {
+      p {
+        font-family: $font-1;
+        font-weight: 200;
+        font-size: 24px;
+        color: white;
+        line-height: 36px;
+        margin-bottom: 10px;
+        @include media('<=784px') {
+          text-align: center;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+      button {
+        width: 258px;
+        height: 48px;
+        background-color: $color-secondary;
+        border: none;
+        @include media('<=phone') {
+          width: 200px;
+        }
+        &:hover {
+          background-color: darken($color: $color-secondary, $amount: 10);
+        }
+        a {
+          font-size: 16px;
+          font-family: $font-2;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

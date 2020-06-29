@@ -1,0 +1,137 @@
+// RANGE STYLES
+
+.form-range {
+  /* General Rules For Range Slider */
+  margin-top: 48px;
+  width: 70%;
+  .custom-rangeslider {
+    position: relative;
+    margin-top: 40px;
+    padding: 0;
+  }
+
+  // ----- Style -----
+
+  .custom-rangeInput {
+    width: 100%;
+    background: transparent;
+    appearance: none; // Reset Appearance
+    box-sizing: border-box; // Border need to be inset
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: $range-height;
+
+    // Thumb
+    &::-webkit-slider-thumb {
+      @include rangeThumb;
+      margin-top: -8px;
+    } // Webkit
+    &::-moz-range-thumb {
+      @include rangeThumb;
+    } // Mozilla
+    &::-ms-thumb {
+      @include rangeThumb;
+      margin: auto;
+    } // IE
+
+    // Track
+    &::-webkit-slider-runnable-track {
+      @include rangeTrack;
+    }
+    &::-moz-range-track {
+      @include rangeTrack;
+    }
+    &::-ms-track {
+      @include rangeTrack;
+      color: transparent;
+      border: none;
+      outline: none;
+    }
+
+    // ----- States -----
+
+    &:focus,
+    &:active {
+      outline: none; // Removes the blue border.
+      &::-webkit-slider-runnable-track {
+        @include rangeTrackFocus;
+      }
+      &::-moz-range-track {
+        @include rangeTrackFocus;
+      }
+      &::-ms-track {
+        @include rangeTrackFocus;
+      }
+    }
+
+    &::-ms-tooltip {
+      display: none;
+    }
+  }
+
+  // Tooltip
+  .custom-rangeslider__tooltip {
+    line-height: 20px;
+    position: absolute;
+    height: 40px;
+    width: 80px;
+    font-size: 16px;
+    color: $color-primary;
+    background-color: $color-secondary;
+    padding: 3px 3px;
+    border: $tool-tip-border;
+    top: -40px;
+    left: 0;
+    text-align: center;
+    transform: translate(-26%, 0);
+    border-radius: 3px;
+
+    @include unSelectable;
+    @include avoidClicks;
+
+    &:after {
+      display: block;
+      content: ' ';
+      background: $color-secondary;
+      position: absolute;
+      border: $tool-tip-border-arrow;
+      border-top: 0;
+      border-left: 0;
+      width: 10px;
+      height: 10px;
+      left: calc(50% - 6px);
+      bottom: -6px;
+      transform: rotate(45deg);
+    }
+  }
+  .custom-rangeslider {
+    label {
+      color: white;
+      font-size: 14px;
+    }
+  }
+
+  .custom-rangeslider__label {
+    width: 100%;
+    font-size: 12px;
+    display: block;
+
+    span {
+      display: block;
+    }
+    &-min {
+      float: left;
+    }
+    &-max {
+      float: right;
+    }
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
