@@ -1,0 +1,6 @@
+name: chaltets
+recipe: pantheon
+config:
+  framework: wordpress
+  site: chaltets
+  id: 50fdfbd3-dc21-4c93-8e80-dfbd60f71d44

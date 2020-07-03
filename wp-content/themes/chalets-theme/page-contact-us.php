@@ -8,7 +8,7 @@
         <?php get_template_part('template-parts/content', 'none')?>
 
         <?php endif;?>
-        <p>Template: page-contact-us.php</p>
+        <!-- <p>Template: page-contact-us.php</p> -->
     </main>
 </div>
 

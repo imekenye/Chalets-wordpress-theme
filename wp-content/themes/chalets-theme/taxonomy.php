@@ -7,7 +7,7 @@
 
     <?php endif;?>
 </div>
-<p>Template: taxonomy.php</p>
+<!-- <p>Template: taxonomy.php</p> -->
 
 
 <?php get_footer();?>

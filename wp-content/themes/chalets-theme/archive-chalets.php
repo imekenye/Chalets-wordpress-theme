@@ -1,4 +1,4 @@
-<?php get_header('listing')?>
+<?php get_header('chalets')?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
         <div class="forsale__chalets">

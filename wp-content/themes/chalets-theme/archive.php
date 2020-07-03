@@ -7,7 +7,7 @@
 <?php get_template_part('template-parts/content', 'none')?>
 
 <?php endif;?>
-<p>Template: archive.php</p>
+<!-- <p>Template: archive.php</p> -->
 
 
 <?php get_footer();?>

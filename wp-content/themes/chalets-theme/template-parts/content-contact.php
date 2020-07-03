@@ -5,7 +5,7 @@
 
     <?php
   echo do_shortcode(
-    '[ninja_form id=1]'
+    '[ninja_form id=3]'
 );
 ?>
 </section>
