@@ -238,4 +238,31 @@ gsap.fromTo(
 
 console.log('lol');
 
-// contact form
+// Menu
+
+const menu = document.getElementById('hamburger');
+const navwrapper = document.querySelector('.nav__wrapper');
+const close = document.querySelector('.close__nav');
+
+const tl = gsap.timeline({ paused: true });
+
+tl.fromTo(
+  '.nav__wrapper',
+  { css: { display: 'none', opacity: 0 }, duration: 0.5, stagger: 1 },
+  { css: { display: 'block', opacity: 1 }, duration: 0.5, stagger: 1 }
+)
+  .fromTo('.close__nav', { opacity: 0 }, { opacity: 1 }, '<')
+  .fromTo(
+    '.nav__list-mobile > li',
+    { opacity: 0 },
+    { opacity: 1, stagger: { amount: 0.4 } },
+    '<'
+  );
+
+menu.addEventListener('click', () => {
+  tl.play();
+});
+
+close.addEventListener('click', () => {
+  tl.reverse();
+});

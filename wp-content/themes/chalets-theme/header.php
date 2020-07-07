@@ -14,7 +14,7 @@
         <div id="chalet-form">
 
             <form action="/search" class="wrapper-search" id='wrapper-search'>
-                <div class="close-search"><span>X</span>CLOSE</div>
+                <div class="close-search"><span>X</span></div>
                 <div class="search_box">
                     <div class="search_field">
                         <input type="text" class="input" id="search-input" placeholder="Search chalet by name">
@@ -24,10 +24,8 @@
                             </path>
                         </svg>
                     </div>
-                </div>
-            </form>
-            <div class="results" id="results">
-                <!-- <div id="chaletresultss" class="chaletresultss">
+                    <div class="results" id="results">
+                        <!-- <div id="chaletresultss" class="chaletresultss">
                     <div class="chaletresults__image">
                         <img src="http://localhost:3000/wp-content/uploads/2020/06/cfs5_1.webp" alt="">
                     </div>
@@ -42,7 +40,9 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
+                    </div>
+                </div>
+            </form>
         </div>
         <!-- NAV SECTION -->
 
@@ -51,28 +51,48 @@
                 <!-- <img src="./images/svg/logo.svg" alt="logo" class="logo custom-logo" />
            -->
                 <div class="custom-logo"><?php the_custom_logo();?></div>
+                <div class="close__nav">x <span>Close</span> </div>
                 <?php
             wp_nav_menu(
     array(
                     'theme_location'=>'top-menu',
-                    'menu_class' =>'nav__list'
+                    'menu_class' =>'nav__list',
+                    
                 )
 );
             ?>
-                <svg id="sicon" class="js-search-trigger" width="30" data-name="Layer 1"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 484.42">
-                    <defs>
-                        <style>
-                        .cls-1 {
-                            fill: #fff;
-                        }
-                        </style>
-                    </defs>
-                    <title>search</title>
-                    <path class="cls-1"
-                        d="M508.87,478.71,360.14,330a201.64,201.64,0,0,0,45.19-127.31C405.33,90.92,314.42,0,202.67,0S0,90.92,0,202.67,90.92,405.33,202.67,405.33A201.64,201.64,0,0,0,330,360.14L478.71,508.88a10.67,10.67,0,0,0,15.08,0l15.09-15.09A10.66,10.66,0,0,0,508.87,478.71Zm-306.2-116c-88.23,0-160-71.77-160-160s71.77-160,160-160,160,71.77,160,160S290.9,362.67,202.67,362.67Z"
-                        transform="translate(0 0)" />
-                </svg>
+                <?php wp_nav_menu(
+                array(
+                    'theme_location'=>'mobile-menu',
+                    'menu_class' =>'nav__list-mobile',
+                    'container' => 'div',
+                    'container_class' => 'nav__wrapper'
+                )
+            );
+            ?>
+                <div class="nav__right">
+                    <svg id="sicon" class="js-search-trigger" width="40" data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 484.42">
+                        <defs>
+                            <style>
+                            .cls-1 {
+                                fill: #fff;
+                            }
+                            </style>
+                        </defs>
+                        <title>search</title>
+                        <path class="cls-1"
+                            d="M508.87,478.71,360.14,330a201.64,201.64,0,0,0,45.19-127.31C405.33,90.92,314.42,0,202.67,0S0,90.92,0,202.67,90.92,405.33,202.67,405.33A201.64,201.64,0,0,0,330,360.14L478.71,508.88a10.67,10.67,0,0,0,15.08,0l15.09-15.09A10.66,10.66,0,0,0,508.87,478.71Zm-306.2-116c-88.23,0-160-71.77-160-160s71.77-160,160-160,160,71.77,160,160S290.9,362.67,202.67,362.67Z"
+                            transform="translate(0 0)" />
+                    </svg>
+
+                    <div class="hamburger__menu" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
             </div>
         </nav>
         <!-- END OF NAV SECTION -->

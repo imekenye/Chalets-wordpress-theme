@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -542,16 +542,43 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 $ = jQuery;
 $('#sicon').click(function () {
-  $('#wrapper-search').css({
-    display: 'block'
-  });
+  // $('#wrapper-search').css({ display: 'block' });
   $searchForm.find('input').focus();
+  var tl = gsap.timeline();
+  tl.fromTo('.wrapper-search', {
+    css: {
+      display: 'none',
+      opacity: 0,
+      y: -100
+    }
+  }, {
+    css: {
+      display: 'block',
+      opacity: 1,
+      y: 0
+    }
+  });
 });
 $('.close-search').click(function () {
-  $('#wrapper-search').css({
-    display: 'none'
+  var tl = gsap.timeline();
+  tl.fromTo('.wrapper-search', {
+    css: {
+      display: 'block',
+      opacity: 1,
+      y: 0
+    }
+  }, {
+    css: {
+      display: 'none',
+      opacity: 0,
+      y: -100
+    }
   });
   $chaletform.find('#results').css({
     display: 'none'
@@ -574,21 +601,41 @@ var $chaletresults = $chaletform.find('#results');
 $searchForm.submit(function (e) {
   e.preventDefault();
   $chaletform.find('#results').empty();
-  var $data = {
-    results: $chaletform.find('#search-input').val()
-  };
-  $.ajax({
-    url: "".concat(chaletsData.root_url, "/wp-json/chalets/v1/search?"),
-    data: $data,
-    success: function success(response) {
-      for (var i = 0; i < response.length; i++) {
-        console.log(response);
-        var $html = "\n            <div id=\"chaletresults\" class=\"chaletresults\">\n                    <div class=\"chaletresults__image\">\n                        <img src=\"".concat(response[i].image, "\" alt=\"\">\n                    </div>\n                    <div class=\"chaletresults__details\">\n                        <div class=\"chaletresults__details-left\">\n                            <h1>").concat(response[i].title, "</h1>\n                            <p>").concat(response[i].bedrooms, " bedrooms . ").concat(response[i].bathrooms, " bathrooms</p>\n                        </div>\n                        <div class=\"chaletresults__details-right\">\n                            <div class=\"price\"><span>price</span>$").concat(response[i].price, "</div>\n                            <button><a href=\"").concat(response[i].permalink, "\">View Chalet</a></button>\n                        </div>\n                    </div>\n                </div>\n      ");
-        $chaletform.find('#results').append($html);
-        $searchForm.find('input').val('');
-      }
-    }
-  });
+
+  var getChalets = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var results, response, chalets, chaletsresults;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              results = $chaletform.find('#search-input').val();
+              _context.next = 3;
+              return axios.get("".concat(chaletsData.root_url, "/wp-json/chalets/v1/search?&results=").concat(results));
+
+            case 3:
+              response = _context.sent;
+              chalets = response.data;
+              chaletsresults = chalets.map(function (chalet) {
+                return "\n            <div id=\"chaletresults\" class=\"chaletresults\">\n                    <div class=\"chaletresults__image\">\n                        <img src=\"".concat(chalet.image, "\" alt=\"\">\n                    </div>\n                    <div class=\"chaletresults__details\">\n                        <div class=\"chaletresults__details-left\">\n                            <h1>").concat(chalet.title, "</h1>\n                            <p>").concat(chalet.bedrooms, " bedrooms . ").concat(chalet.bathrooms, " bathrooms</p>\n                        </div>\n                        <div class=\"chaletresults__details-right\">\n                            <div class=\"price\"><span>price</span>$").concat(chalet.price, "</div>\n                            <button><a href=\"").concat(chalet.permalink, "\">View Chalet</a></button>\n                        </div>\n                    </div>\n                </div>\n      ");
+              });
+              $chaletform.find('#results').append(chaletsresults);
+              $searchForm.find('input').val('');
+
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function getChalets() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  getChalets();
 }); // light box
 
 function fancyb() {
@@ -879,7 +926,46 @@ gsap.fromTo('.g-img', {
   opacity: 1,
   ease: 'power4. out'
 });
-console.log('lol'); // contact form
+console.log('lol'); // Menu
+
+var menu = document.getElementById('hamburger');
+var navwrapper = document.querySelector('.nav__wrapper');
+var close = document.querySelector('.close__nav');
+var tl = gsap.timeline({
+  paused: true
+});
+tl.fromTo('.nav__wrapper', {
+  css: {
+    display: 'none',
+    opacity: 0
+  },
+  duration: 0.5,
+  stagger: 1
+}, {
+  css: {
+    display: 'block',
+    opacity: 1
+  },
+  duration: 0.5,
+  stagger: 1
+}).fromTo('.close__nav', {
+  opacity: 0
+}, {
+  opacity: 1
+}, '<').fromTo('.nav__list-mobile > li', {
+  opacity: 0
+}, {
+  opacity: 1,
+  stagger: {
+    amount: 0.4
+  }
+}, '<');
+menu.addEventListener('click', function () {
+  tl.play();
+});
+close.addEventListener('click', function () {
+  tl.reverse();
+});
 
 /***/ }),
 
@@ -890,33 +976,69 @@ console.log('lol'); // contact form
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$ = jQuery;
-var $chaletsearch = $('#chalet-search');
-var $searchform = $chaletsearch.find('form');
-var $searchresults = $chaletsearch.find('#listingcard');
-$searchform.submit(function (e) {
-  e.preventDefault();
-  var $data = {
-    action: 'chalet_search',
-    price: $chaletsearch.find('#price').val(),
-    no_of_bedrooms: $chaletsearch.find('#bedrooms').val(),
-    no_of_bathrooms: $chaletsearch.find('#bathrooms').val()
-  };
-  console.log($data);
-  $.ajax({
-    url: ajax_url,
-    data: $data,
-    success: function success(response) {
-      $chaletsearch.find('#listing-card').empty();
+// $ = jQuery;
+// var $chaletsearch = $('#chalet-search');
+// var $searchform = $chaletsearch.find('form');
+// var $searchresults = $chaletsearch.find('#listingcard');
+// $searchform.submit(function(e) {
+//   e.preventDefault();
+//   var $data = {
+//     action: 'chalet_search',
+//     price: $chaletsearch.find('#price').val(),
+//     no_of_bedrooms: $chaletsearch.find('#bedrooms').val(),
+//     no_of_bathrooms: $chaletsearch.find('#bathrooms').val(),
+//   };
+//   console.log($data);
+//   $.ajax({
+//     url: ajax_url,
+//     data: $data,
+//     success: function(response) {
+//       $chaletsearch.find('#listing-card').empty();
+//       for (var i = 0; i < response.length; i++) {
+//         var $html = `
+//         <div class="listing__card">
+//         <div class="listing__card-image">
+//             <div class="img-overlay"></div>
+//             <div class="f-img-1">
+//                 <img src="${response[i].image}">
+//             </div>
+//         </div>
+//         <div class="listing__card-price">
+//             <span>$${response[i].price}</span>
+//             <div class="tag">${response[i].status[0].name}</div>
+//         </div>
+//         <div class="listing__card-body">
+//             <!-- <h3><?php the_title()?></h3> -->
+//             <h3>${response[i].title}</h3>
+//             <p>${response[i].location}</p>
+//             <span>${response[i].bedroom} bd | ${response[i].bathroom} ba |
+//                 ${response[i].sqft} sqft</span>
+//         </div>
+//         </div>
+//           `;
+//         console.log($html);
+//         // $('#search-results').empty();
+//         $('#search-results')
+//           .find('#listing-card')
+//           .empty()
+//           .append($html);
+//       }
+//     },
+//   });
+// });
 
-      for (var i = 0; i < response.length; i++) {
-        var $html = "\n        <div class=\"listing__card\">\n\n        <div class=\"listing__card-image\">\n            <div class=\"img-overlay\"></div>\n            <div class=\"f-img-1\">\n                <img src=\"".concat(response[i].image, "\">\n            </div>\n        </div>\n        <div class=\"listing__card-price\">\n            <span>$").concat(response[i].price, "</span>\n            <div class=\"tag\">").concat(response[i].status[0].name, "</div>\n        </div>\n        <div class=\"listing__card-body\">\n            <!-- <h3><?php the_title()?></h3> -->\n            <h3>").concat(response[i].title, "</h3>\n            <p>").concat(response[i].location, "</p>\n            <span>").concat(response[i].bedroom, " bd | ").concat(response[i].bathroom, " ba |\n                ").concat(response[i].sqft, " sqft</span>\n        </div>\n        </div>\n          "); // $('#search-results').empty();
+/***/ }),
 
-        $('#search-results').find('#listing-card').empty().append($html);
-      }
-    }
-  });
-});
+/***/ 0:
+/*!*******************************************!*\
+  !*** multi babel-polyfill ./src/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'babel-polyfill'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
+
 
 /***/ })
 
