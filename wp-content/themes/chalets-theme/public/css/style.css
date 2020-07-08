@@ -290,11 +290,13 @@ html {
   font-size: 62.5%; }
 
 body {
+  visibility: hidden;
   font-family: "Niramit", sans-serif;
   line-height: 1.7;
   font-size: 16px;
   box-sizing: border-box;
-  color: #5c5f6d; }
+  color: #5c5f6d;
+  overflow-x: none; }
 
 a {
   text-decoration: none;
@@ -832,6 +834,9 @@ input.wpcf7-form-control.wpcf7-submit {
   grid-template-rows: 1fr 1fr;
   height: 100%;
   position: relative; }
+  @media (max-width: 768px) {
+    .search-form {
+      grid-template-rows: 1fr 200px; } }
   .search-form__left-top {
     height: 100%;
     background-size: cover;
@@ -916,6 +921,9 @@ input.wpcf7-form-control.wpcf7-submit {
     width: 100%;
     align-items: center;
     justify-items: center; }
+    @media (max-width: 768px) {
+      .search-form__right {
+        height: 60%; } }
     .search-form__right .dream {
       margin: 0 10%; }
       .search-form__right .dream h2 {
@@ -925,12 +933,14 @@ input.wpcf7-form-control.wpcf7-submit {
         margin: 0;
         text-align: center;
         font-size: 56px; }
+        @media (max-width: 768px) {
+          .search-form__right .dream h2 {
+            font-size: 36px; } }
     @media (max-width: 768px) {
       .search-form__right {
         position: absolute;
         background-color: #24272ef1;
         padding: 5rem 0;
-        height: 90%;
         width: 130%;
         right: 30px;
         top: 30px; } }
@@ -939,7 +949,6 @@ input.wpcf7-form-control.wpcf7-submit {
         position: absolute;
         background-color: #24272ef1;
         padding: 5rem 0;
-        height: 90%;
         width: 130%;
         right: 30px;
         top: 30px; } }
@@ -959,6 +968,9 @@ input.wpcf7-form-control.wpcf7-submit {
       align-items: center;
       height: 100%;
       width: 100%; }
+      @media (max-width: 768px) {
+        .search-form__right .form {
+          height: 80%; } }
       .search-form__right .form-nav {
         display: flex;
         margin-bottom: 46px; }

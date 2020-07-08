@@ -6,6 +6,9 @@
   grid-template-rows: 1fr 1fr;
   height: 100%;
   position: relative;
+  @include media('<=tablet') {
+    grid-template-rows: 1fr 200px;
+  }
   &__left-top {
     //background: url('/images/form-image.png');
     height: 100%;
@@ -96,6 +99,9 @@
     width: 100%;
     align-items: center;
     justify-items: center;
+    @include media('<=tablet') {
+      height: 60%;
+    }
     .dream {
       margin: 0 10%;
       h2 {
@@ -105,13 +111,15 @@
         margin: 0;
         text-align: center;
         font-size: 56px;
+        @include media('<=tablet') {
+          font-size: 36px;
+        }
       }
     }
     @include media('<=tablet') {
       position: absolute;
       background-color: #24272ef1;
       padding: 5rem 0;
-      height: 90%;
       width: 130%;
       right: 30px;
       top: 30px;
@@ -120,7 +128,6 @@
       position: absolute;
       background-color: #24272ef1;
       padding: 5rem 0;
-      height: 90%;
       width: 130%;
       right: 30px;
       top: 30px;
@@ -142,6 +149,9 @@
       align-items: center;
       height: 100%;
       width: 100%;
+      @include media('<=tablet') {
+        height: 80%;
+      }
 
       &-nav {
         display: flex;

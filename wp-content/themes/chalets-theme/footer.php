@@ -17,7 +17,9 @@
  </footer>
 
  <!-- END OF FOOTER SECTION -->
+
  <?php wp_footer()?>
+
 
  <body />
  <html />

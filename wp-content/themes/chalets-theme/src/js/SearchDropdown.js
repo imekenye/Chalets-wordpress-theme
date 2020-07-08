@@ -10,6 +10,17 @@ $('#sicon').click(function() {
     { css: { display: 'block', opacity: 1, y: 0 } }
   );
 });
+$('.form-btn').click(function(e) {
+  e.preventDefault();
+  // $('#wrapper-search').css({ display: 'block' });
+  $searchForm.find('input').focus();
+  const tl = gsap.timeline();
+  tl.fromTo(
+    '.wrapper-search',
+    { css: { display: 'none', opacity: 0, y: -100 } },
+    { css: { display: 'block', opacity: 1, y: 0 } }
+  );
+});
 $('.close-search').click(function() {
   const tl = gsap.timeline();
   tl.fromTo(

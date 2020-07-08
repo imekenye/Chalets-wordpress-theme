@@ -11,11 +11,13 @@ html {
   font-size: 62.5%;
 }
 body {
+  visibility: hidden;
   font-family: $font-2;
   line-height: 1.7;
   font-size: 16px;
   box-sizing: border-box;
   color: $color-grey-dark;
+  overflow-x: none;
 }
 
 a {

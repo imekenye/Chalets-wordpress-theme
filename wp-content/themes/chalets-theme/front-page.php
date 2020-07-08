@@ -3,6 +3,7 @@
 
 
 <?php if (have_posts()): while (have_posts()):the_post(); ?>
+
 <div class="hero">
     <?php
 $the_query = new WP_Query(array(
@@ -63,7 +64,7 @@ while ($the_query->have_posts()) : $the_query->the_post(); ?>
 <!-- FORM SECTION -->
 
 <section class="search-form">
-    <div class="search-form__left-top">
+    <div class="search-form__left-top top">
         <img src="<?php echo wp_get_attachment_url(get_theme_mod('chalets_customform_image'));?>" alt="">
     </div>
     <div class="search-form__left-bottom">
@@ -71,15 +72,8 @@ while ($the_query->have_posts()) : $the_query->the_post(); ?>
         <div class="rect"></div>
     </div>
     <div class="search-form__right">
-        <form action="/search-page" class="form">
-            <!-- <div class="form-nav">
-                <div class="form-nav__forsale">
-                    <a href="/">For Sale</a>
-                </div>
-                <div class="form-nav__forrent">
-                    <a href="/">For Rent</a>
-                </div>
-            </div> -->
+        <form class="form">
+
             <div class="form-select">
 
             </div>
@@ -153,22 +147,6 @@ while ($the_featured_query->have_posts()) : $the_featured_query->the_post(); ?>
 
 <!-- END OF FEATURED CHALETS SECTION -->
 
-<!-- CONTACT FORM SECTION -->
-
-<!-- <section class="enquiry__form">
-    <div class="enquiry__form-heading">
-        <h3>Enquire</h3>
-    </div>
-    <form action="">
-        <input type="text" placeholder="Your Name" class="form__input-text" />
-        <input type="email" placeholder="Email Address" class="form__input-email" />
-        <input type="text" placeholder="Subject" class="form__input-subject" />
-        <textarea name="" id="" cols="30" rows="10" placeholder="How can we help you?"
-            class="form__input-textarea"></textarea>
-        <button class="form__input-btn">Submit</button>
-    </form>
-</section> -->
-
 
 <?php endwhile; else:?>
 <?php get_template_part('template-parts/content', 'none')?>
@@ -177,4 +155,5 @@ while ($the_featured_query->have_posts()) : $the_featured_query->the_post(); ?>
 
 
 <!-- END OF CONTACT FORM SECTION -->
+
 <?php get_footer()?>

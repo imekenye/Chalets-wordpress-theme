@@ -16,12 +16,13 @@ require('inc/chalet-shortcode.php');
 function load_js()
 {
     wp_register_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js', [], 3, true);
+    wp_register_script('barba', 'https://cdn.jsdelivr.net/npm/@barba/core', [], 3, true);
     wp_register_script('axios', "https://unpkg.com/axios/dist/axios.min.js", [], 1.0, true);
     wp_register_script('fancy', 'https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', ['jquery'], time(), true);
    
-    wp_register_script('bundlejs', get_template_directory_uri() . '/public/js/bundle.js', ['gsap'], time(), true);
+    wp_register_script('bundlejs', get_template_directory_uri() . '/public/js/bundle.js', ['gsap','barba'], time(), true);
     wp_register_script('search', get_template_directory_uri() . '/src/js/Search.js', ['jquery'], time(), true);
-    wp_register_script('main', get_template_directory_uri() . '/src/js/main.js', ['jquery'], time(), true);
+    wp_register_script('main', get_template_directory_uri() . '/src/js/main.js', ['gsap','barba'], time(), true);
     wp_register_script('searchform', get_template_directory_uri() . '/src/js/SearchDropdown.js', ['jquery','axios','gsap'], time(), true);
  
     wp_enqueue_script('bundlejs');
@@ -30,6 +31,7 @@ function load_js()
     wp_enqueue_script('searchform');
     wp_enqueue_script('fancy');
     wp_enqueue_script('gsap');
+    wp_enqueue_script('barba');
     wp_enqueue_script('axios');
 
     wp_localize_script('bundlejs', 'chaletsData', array(
