@@ -1,7 +1,8 @@
 # Chalets wordpress theme
 
 This is a WordPress theme for a real estate website specifically made for chalet properties
-![alt](https://ibb.co/mCxB0gc, '')
+<!-- ![alt](https://ibb.co/mCxB0gc, '') -->
+<img src="https://ibb.co/mCxB0gc"/>
 
 
 ## Author
