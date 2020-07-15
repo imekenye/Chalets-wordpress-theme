@@ -14,7 +14,7 @@
         <div class="listing__card-body">
             <!-- <h3><?php the_title()?></h3> -->
             <?php the_title('<h3><a href="' . esc_url(get_permalink()) . '">', '</a></h3>')?>
-            <p><?php the_field('location');?></p>
+            <p><?php  echo wp_trim_words(get_field('location'), 6, '...'); ?></p>
             <span><?php the_field('no_of_bedrooms');?> bd | <?php the_field('no_of_bathrooms');?> ba |
                 <?php the_field('no_in_sqft');?> sqft</span>
         </div>
