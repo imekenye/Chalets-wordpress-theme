@@ -4,6 +4,9 @@ footer {
   height: 146px;
   background: $color-primary;
   border-top: 1px solid $color-secondary;
+  @include media('<=phone') {
+    height: 40%;
+  }
   .footerWrapper {
     height: 100%;
     width: 90%;

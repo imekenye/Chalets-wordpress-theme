@@ -7,6 +7,9 @@
   display: none;
   transition: display 3s ease-in-out;
   overflow: hidden;
+  @include media('<=468px') {
+    height: 40%;
+  }
   .dis-none {
     display: block;
   }
@@ -39,6 +42,9 @@
       height: 10%;
       margin: 0 auto;
       position: relative;
+      @include media('<=468px') {
+        width: 70%;
+      }
 
       input {
         width: 100%;

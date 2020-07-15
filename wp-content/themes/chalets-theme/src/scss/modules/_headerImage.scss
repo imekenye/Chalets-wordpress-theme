@@ -42,7 +42,7 @@
         left: 25%;
       }
       @include media('<=phone') {
-        left: 10%;
+        // left: 10%;
       }
     }
   }
