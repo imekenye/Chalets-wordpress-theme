@@ -11,7 +11,7 @@
              </div>
          </div>
          <div class="footer__right">
-             <p>&copy; 2019 Chalets and Caviar.Made with ❤️</p>
+             <p>&copy; <?php echo date('Y')?> Chalets and Caviar.Made with ❤️</p>
          </div>
      </div>
  </footer>
